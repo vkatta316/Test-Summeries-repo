@@ -21,6 +21,9 @@ jobs:
         needs: publish-test-results
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+              
             - name: ServiceNow DevOps Unit Test Results
               uses: ServiceNow/servicenow-devops-test-report@main
               with:
