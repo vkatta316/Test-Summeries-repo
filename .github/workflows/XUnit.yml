@@ -15,3 +15,22 @@ jobs:
       with:
         name: test-results  # Name for the artifact
         path: '**/xunit.xml'  # Use a wildcard pattern to match all xunit.xml files
+
+  test:
+        name: Test
+        needs: publish-test-results
+        runs-on: ubuntu-latest
+        steps:
+            - name: ServiceNow DevOps Unit Test Results
+              uses: ServiceNow/servicenow-devops-test-report@main
+              with:
+                  devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+                  devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+                  instance-url: ${{ secrets.SN_INSTANCE_NAME }}
+                  tool-id: ${{ secrets.SN_ORCH_TOOL_ID }}
+                  # Job Name
+                  job-name: 'Test' # Should be same name as declared in 'name' clause of the current Stage
+                  # Github Context
+                  context-github: ${{ toJSON(github) }}
+                  # XUnit xml report file name with path
+                  xml-report-filename: '**/xunit.xml'
