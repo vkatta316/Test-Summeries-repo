@@ -36,4 +36,4 @@ jobs:
                   # Github Context
                   context-github: ${{ toJSON(github) }}
                   # XUnit xml report file name with path
-                  xml-report-filename: xunit.xml
+                  xml-report-filename: testng.xml
