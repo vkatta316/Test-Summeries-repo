@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="SampleTestSuite">
+    <testcase name="Test1">
+      <failure message="This test failed">Detailed failure message goes here</failure>
+    </testcase>
+    <testcase name="Test2"/>
+    <testcase name="Test3">
+      <skipped/>
+    </testcase>
+  </testsuite>
+</testsuites>
