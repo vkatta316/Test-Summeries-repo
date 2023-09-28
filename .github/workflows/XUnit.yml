@@ -1,6 +1,6 @@
 name: Publish Test Results
 
-on: [push]
+on: workflow_dispatch
 
 jobs:
   publish-test-results:
