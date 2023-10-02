@@ -36,33 +36,12 @@ jobs:
                   # Github Context
                   context-github: ${{ toJSON(github) }}
                   # XUnit xml report file name with path
-                  xml-report-filename: testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
-  test2:
-        name: Test2
-        needs: test
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v2
-              
-            - name: ServiceNow DevOps Unit Test Results
-              uses: ServiceNow/servicenow-devops-test-report@STRY56200161_spike
-              with:
-                  devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-                  devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-                  instance-url: ${{ secrets.SN_INSTANCE_NAME }}
-                  tool-id: ${{ secrets.SN_ORCH_TOOL_ID }}
-                  # Job Name
-                  job-name: 'Test' # Should be same name as declared in 'name' clause of the current Stage
-                  # Github Context
-                  context-github: ${{ toJSON(github) }}
-                  # XUnit xml report file name with path
-                  xml-report-filename: valid-xunit.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
+                  xml-report-filename: valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
 
                   
   deploy:
     name: Deploy
-    needs: test2
+    needs: test
     runs-on: ubuntu-latest
     steps:     
       - name: ServiceNow Change
