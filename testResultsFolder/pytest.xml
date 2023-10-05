@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <testsuites>
+        <testsuite name="pytest" errors="0" failures="0" skipped="0" tests="2" time="0.183" timestamp="2023-07-16T12:52:12.852183" hostname="fv-az462-162">
+            <testcase classname="tests.test_my_module.python_test" name="test_add" time="0.002" />
+            <testcase classname="tests.test_my_module.python_test" name="test_subtract" time="0.001" />
+        </testsuite>
+    </testsuites>
