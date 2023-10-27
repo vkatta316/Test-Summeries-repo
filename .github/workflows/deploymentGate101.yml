@@ -27,7 +27,7 @@ jobs:
 
  
   change:
-    name: 'Change'
+    name: 'change'
     needs: build
     runs-on: ubuntu-latest
     steps:     
@@ -48,10 +48,10 @@ jobs:
           change-request: '{"setCloseCode":"true","attributes":{"short_description":"Automated Software Deployment","description":"Automated Software Deployment.","assignment_group":"a715cd759f2002002920bde8132e7018","implementation_plan":"Software update is tested and results can be found in Test Summaries Tab; When the change is approved the implementation happens automated by the CICD pipeline within the change planned start and end time window.","backout_plan":"When software fails in production, the previous software release will be re-deployed.","test_plan":"Testing if the software was successfully deployed"}}'
           
   # uncomment below lines of code to create change request using deployment gates, indent code if necessary
-          deployment-gate: '{"environment":"deployment_gate", "jobId":"deploy", "jobName":"Deploy"}'
+          deployment-gate: '{"environment":"deployment_gate", "jobName":"deploy"}'
 
   deploy:
-    name: 'Deploy'
+    name: 'deploy'
     needs: change
     runs-on: ubuntu-latest
     steps:
