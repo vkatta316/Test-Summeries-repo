@@ -54,6 +54,8 @@ jobs:
     name: 'deploy'
     needs: change
     runs-on: ubuntu-latest
+    environment: deployment_gate
     steps:
     - name: Run deployment scripts
       run: echo 'Deployment step in progress...'
+      
