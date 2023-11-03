@@ -25,7 +25,7 @@ jobs:
               uses: actions/checkout@v2
               
             - name: ServiceNow DevOps Unit Test Results
-              uses: ServiceNow/servicenow-devops-test-report@EPIC1076738
+              uses: ServiceNow/servicenow-devops-test-report@dev
               with:
                   devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
                   devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -36,7 +36,7 @@ jobs:
                   # Github Context
                   context-github: ${{ toJSON(github) }}
                   # XUnit xml report file name with path
-                  xml-report-filename: testng.xml #valid-MSTest.trx #testResultsFolder/pytest.xml #valid-nunit.xml #invalid_test_type.xml #valid-nunit.xml #invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
+                  xml-report-filename: valid-nunit.xml #testng.xml #valid-MSTest.trx #testResultsFolder/pytest.xml #valid-nunit.xml #invalid_test_type.xml #valid-nunit.xml #invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
             
 
                   
