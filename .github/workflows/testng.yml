@@ -10,12 +10,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    # - name: Publish Test Results
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: test-results  # Name for the artifact
-    #     path: '**/xunit.xml'  # Use a wildcard pattern to match all xunit.xml files
-
   test:
         name: Test
         needs: publish-test-results
