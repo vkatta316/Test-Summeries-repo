@@ -1,9 +1,6 @@
 name: My CI/CD Workflow
 
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 
 jobs:
   build:
