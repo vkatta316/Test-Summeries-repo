@@ -27,14 +27,7 @@ jobs:
           "stageName": "Make API Call",
           "pipelineName": "TestAPICall",
           "toolId": "66434870c3b54e109b11243599013181",
-          "buildNumber": '${{ github.run_number }}',
-          "buildId": '${{ github.run_id }}',
-          "attemptNumber": '${{ github.run_attempt }}',
-          "workflow": "'${{ github.workflow }}'",
-          "repository": "'${{ github.repository }}'",
-          "testType": "Smoke",
-          "errorMessage": "",
-          "fileContent": ""
+          "testType": "Smoke"
         }'
         auth="ZGV2b3BzLmludGVncmF0aW9uLnVzZXI6VGVzdGluZzEh"
         authHeader="Basic $auth"
