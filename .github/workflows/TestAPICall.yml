@@ -12,7 +12,7 @@ jobs:
 
     - name: Make API Call
       run: |
-        apiUrl="https://empkiranv01.service-now.com/api/sn_devops/v1/devops/tool/test?toolId=6878162cc32942509b1124359901319d&testType=Smoke"
+        apiUrl="https://empkiranv01.service-now.com/api/sn_devops/v1/devops/tool/test?toolId=66434870c3b54e109b11243599013181&testType=Smoke"
         requestBody='{"name":"Test summary Smoke","duration":0.0,"passedTests":1,"failedTests":1,"skippedTests":1,"blockedTests":1,"totalTests":4,"startTime": "2023-12-14T23:31:31z","finishTime": "2023-12-15T23:31:31z", "buildNumber":"${{ github.run_number }}","stageName":"Make API Call","pipelineName":"TestAPICall"}'
         auth="ZGV2b3BzLmludGVncmF0aW9uLnVzZXI6VGVzdGluZzEh"
         authHeader="Basic $auth"
