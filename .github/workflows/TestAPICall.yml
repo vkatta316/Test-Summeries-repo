@@ -15,7 +15,7 @@ jobs:
       run: |
         apiUrl="https://empkiranv01.service-now.com/api/sn_devops/v1/devops/tool/test?toolId=66434870c3b54e109b11243599013181&testType=Smoke"
         toolId="66434870c3b54e109b11243599013181"
-        jobname="Test API Job"
+        jobname="Make API Call"
         testType="Smoke"
         
         testSummaries='[{
@@ -29,7 +29,7 @@ jobs:
                 "startTime": "2023-12-14T23:31:31z",
                 "endTime": "2023-12-15T23:31:31z",
                 "duration": 0.0,
-                "testType": "'$testType'",
+                "testType": "Smoke",
                 "suites": []			
             }]'
         
@@ -40,19 +40,19 @@ jobs:
             "buildNumber": '${{ github.run_number }}',
             "buildId": '${{ github.run_id }}',
             "attemptNumber": '${{ github.run_attempt }}',
-            "stageName": "'$jobname'",
+            "stageName": "Make API Call",
             "workflow": "'${{ github.workflow }}'",
             "repository": "'${{ github.repository }}'",
             "testSummaries": '$testSummaries',
             "fileContent": "",
-            "errorMessage": "'$errorMessage'",
-            "testType": "'$testType'"
+            "errorMessage": "",
+            "testType": "Smoke"
         }'
         
         auth="ZGV2b3BzLmludGVncmF0aW9uLnVzZXI6VGVzdGluZzEh"
         authHeader="Basic $auth"
         
-        response=$(curl -X POST -H "Content-Type: application/json" -H "Authorization: $authHeader" -d "$requestBody" "$apiUrl")
+        response=$(curl -X POST -H "Content-Type: application/json" -H "Authorization: $authHeader" -d "$requestBody" $apiUrl)
         exitCode=$?
         
         if [ $exitCode -eq 0 ]; then
