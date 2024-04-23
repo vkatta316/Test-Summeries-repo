@@ -1,0 +1,31 @@
+name: Test API Call
+
+on:
+workflow-dispatch
+
+jobs:
+  post_api_call:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Make API Call
+      run: |
+        apiUrl="https://empkiranv01.service-now.com/api/sn_devops/v1/devops/tool/test?toolId=6878162cc32942509b1124359901319d&testType=Smoke"
+        requestBody='{"name":"Test summary Smoke","duration":0.0,"passedTests":1,"failedTests":1,"skippedTests":1,"blockedTests":1,"totalTests":4,"buildNumber":"${{ github.run_number }}","stageName":"Make API Call","pipelineName":"TestAPICall"}'
+        auth="ZGV2b3BzLmludGVncmF0aW9uLnVzZXI6VGVzdGluZzEh"
+        authHeader="Basic $auth"
+        
+        response=$(curl -X POST -H "Content-Type: application/json" -H "Authorization: $authHeader" -d "$requestBody" $apiUrl)
+        exitCode=$?
+        
+        if [ $exitCode -eq 0 ]; then
+          echo "API call successful!"
+          echo "Response: $response"
+        else
+          echo "API call failed!"
+          echo "Response: $response"
+          exit 1
+        fi
