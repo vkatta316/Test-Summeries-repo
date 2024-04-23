@@ -13,45 +13,10 @@ jobs:
 
     - name: Make API Call
       run: |
-        apiUrl="https://empkiranv01.service-now.com/api/sn_devops/v1/devops/tool/test?toolId=66434870c3b54e109b11243599013181&testType=Smoke"
-        toolId="66434870c3b54e109b11243599013181"
-        jobname="Make API Call"
-        testType="Smoke"
-        
-        testSummaries='[{
-                "name": "GitHub Test Summary - Smoke",
-                "passedTests": 1,
-                "failedTests": 1,
-                "skippedTests": 1,
-                "ignoredTests": 0,
-                "blockedTests": 0,
-                "totalTests": 4,
-                "startTime": "2023-12-14T23:31:31z",
-                "endTime": "2023-12-15T23:31:31z",
-                "duration": 0.0,
-                "testType": "Smoke",
-                "suites": []			
-            }]'
-        
-        errorMessage=""
-        
-        requestBody='{
-            "toolId": "'$toolId'",
-            "buildNumber": '${{ github.run_number }}',
-            "buildId": '${{ github.run_id }}',
-            "attemptNumber": '${{ github.run_attempt }}',
-            "stageName": "Make API Call",
-            "workflow": "'${{ github.workflow }}'",
-            "repository": "'${{ github.repository }}'",
-            "testSummaries": '$testSummaries',
-            "fileContent": "",
-            "errorMessage": "",
-            "testType": "Smoke"
-        }'
-        
+        requestBody='{"name":"Test summary Smoke","duration":0.0,"passedTests":1,"failedTests":1,"skippedTests":1,"blockedTests":1,"totalTests":4,"startTime": "2023-12-14T23:31:31z","finishTime": "2023-12-15T23:31:31z", "buildNumber":"6","stageName":"Make API Call","pipelineName":"TestAPICall"}'
         auth="ZGV2b3BzLmludGVncmF0aW9uLnVzZXI6VGVzdGluZzEh"
         authHeader="Basic $auth"
-        
+  
         response=$(curl -X POST -H "Content-Type: application/json" -H "Authorization: $authHeader" -d "$requestBody" $apiUrl)
         exitCode=$?
         
