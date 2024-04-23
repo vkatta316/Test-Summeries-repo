@@ -1,6 +1,7 @@
-name: API Call
+name: Test API Call
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
 
 jobs:
   post_api_call:
@@ -51,7 +52,7 @@ jobs:
         auth="ZGV2b3BzLmludGVncmF0aW9uLnVzZXI6VGVzdGluZzEh"
         authHeader="Basic $auth"
         
-        response=$(curl -X POST -H "Content-Type: application/json" -H "Authorization: $authHeader" -d "$requestBody" $apiUrl)
+        response=$(curl -X POST -H "Content-Type: application/json" -H "Authorization: $authHeader" -d "$requestBody" "$apiUrl")
         exitCode=$?
         
         if [ $exitCode -eq 0 ]; then
