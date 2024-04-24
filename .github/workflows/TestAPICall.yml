@@ -62,7 +62,7 @@ jobs:
           # echo 'Output of ServiceNow DevOps Change Automation is change-request-number = ${{ steps.create_change.outputs.change-request-number }}' >> $GITHUB_OUTPUT
           echo 'Output of ServiceNow DevOps Change Automation is change-request-sys-id = ${{ steps.create_change.outputs.change-request-sys-id }}' >> $GITHUB_OUTPUT
           curl -X POST \
-            -H "Authorization: Basic ZGV2b3BzLmludGVncmF0aW9uLnVzZXI6VGVzdGluZzEh" \
+            -H "Authorization: Basic ZGV2b3BzLnN5c3RlbTpUZXN0aW5nMSE=" \
             -H "Content-Type: application/xml" \
             -d '<root><name>john2</name><age>34</age></root>' \
             "https://empkiranv01.service-now.com/api/now/attachment/file?table_name=change_request&table_sys_id=${{ steps.create_change.outputs.change-request-sys-id }}&file_name=test113.xml"
