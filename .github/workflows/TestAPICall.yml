@@ -87,5 +87,6 @@ jobs:
           
       - name: Output of ServiceNow DevOps Get Change
         run: |
-          echo 'Output of ServiceNow DevOps Change Automation is change-request-sys-id = ${{ steps.create_change.outputs }}'
+          echo 'Output of ServiceNow DevOps Change Automation is change-request-sys-id = ${{ steps.create_change.outputs.change-request-sys-id }}'
+          echo 'Output of ServiceNow DevOps Change Automation is change-request-sys-id = ${{ steps.ServiceNow DevOps Get Change.outputs.change-request-sys-id }}'
   
