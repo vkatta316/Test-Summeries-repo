@@ -14,14 +14,17 @@ jobs:
       
   Build2:
     runs-on: ubuntu-latest
+    needs: Build
 
     steps:
     - name: Checkout repository
+      
       run: sleep 15
       # uses: actions/checkout@v2
       
   Build3:
     runs-on: ubuntu-latest
+    needs: Build2
 
     steps:
     - name: Checkout repository
