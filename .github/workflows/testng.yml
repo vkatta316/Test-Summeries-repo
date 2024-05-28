@@ -1,6 +1,8 @@
 name: GitHub Test Custom Action
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+  workflow_call:
 
 jobs:
   Build:
