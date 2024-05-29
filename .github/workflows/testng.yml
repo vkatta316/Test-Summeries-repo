@@ -17,10 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: Build
 
+    # steps:
+    # - name: Checkout repository
     steps:
-    - name: Checkout repository
+    - name: Fail the job
+      run: exit 1
       
-      run: sleep 15
+      # run: sleep 15
       # uses: actions/checkout@v2
       
   Build3:
