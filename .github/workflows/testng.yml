@@ -11,6 +11,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: Sleep for 15 seconds
+      run: sleep 15
       
   Build2:
     # if: false
@@ -39,6 +42,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: Sleep for 15 seconds
+      run: sleep 15
     # - name: Fail the job
     #   run: exit 1
       
