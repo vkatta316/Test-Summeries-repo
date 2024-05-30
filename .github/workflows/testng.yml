@@ -18,11 +18,11 @@ jobs:
     # needs: Build
 
     steps:
-    - name: Fail the job
-      run: exit 1
+    # - name: Fail the job
+    #   run: exit 1
       
-    # - name: Checkout repository
-    #   uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
       
   Build3:
     runs-on: ubuntu-latest
@@ -37,10 +37,10 @@ jobs:
     # needs: Build2
 
     steps:
-    # - name: Checkout repository
-    #   uses: actions/checkout@v2
-    - name: Fail the job
-      run: exit 1
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    # - name: Fail the job
+    #   run: exit 1
       
 
   # test:
