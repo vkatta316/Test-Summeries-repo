@@ -12,96 +12,96 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Sleep for 15 seconds
-      run: sleep 15
+    # - name: Sleep for 15 seconds
+    #   run: sleep 15
       
-  Build2:
-    # if: false
-    runs-on: ubuntu-latest
-    needs: Build
+  # Build2:
+  #   # if: false
+  #   runs-on: ubuntu-latest
+  #   needs: Build
 
-    steps:
-    # - name: Fail the job
-    #   run: exit 1
+  #   steps:
+  #   # - name: Fail the job
+  #   #   run: exit 1
       
-    - name: Checkout repository
-      uses: actions/checkout@v2
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v2
       
-  Build3:
-    runs-on: ubuntu-latest
-    needs: Build2
+  # Build3:
+  #   runs-on: ubuntu-latest
+  #   needs: Build2
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v2
       
-  Build4:
-    runs-on: ubuntu-latest
-    needs: Build2
+  # Build4:
+  #   runs-on: ubuntu-latest
+  #   needs: Build2
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v2
 
-    - name: Sleep for 15 seconds
-      run: sleep 15
-    # - name: Fail the job
-    #   run: exit 1
+  #   - name: Sleep for 15 seconds
+  #     run: sleep 15
+  #   # - name: Fail the job
+  #   #   run: exit 1
     
-  Build5:
-    runs-on: ubuntu-latest
-    needs: [Build4, Build3]
+  # Build5:
+  #   runs-on: ubuntu-latest
+  #   needs: [Build4, Build3]
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v2
 
-    - name: Sleep for 15 seconds
-      run: sleep 15
+  #   - name: Sleep for 15 seconds
+  #     run: sleep 15
       
-  Build6:
-    runs-on: ubuntu-latest
-    needs: Build4
+  # Build6:
+  #   runs-on: ubuntu-latest
+  #   needs: Build4
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v2
 
-    - name: Sleep for 15 seconds
-      run: sleep 15
+  #   - name: Sleep for 15 seconds
+  #     run: sleep 15
 
-  Build7:
-    runs-on: ubuntu-latest
-    needs: Build6
+  # Build7:
+  #   runs-on: ubuntu-latest
+  #   needs: Build6
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v2
 
-    - name: Sleep for 15 seconds
-      run: sleep 15
+    # - name: Sleep for 15 seconds
+    #   run: sleep 15
 
-  # test:
-  #       name: Test
-  #       needs: Build
-  #       runs-on: ubuntu-latest
-  #       steps:
-  #           - name: Checkout repository
-  #             uses: actions/checkout@v2
+  test:
+        name: Test
+        needs: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
               
-  #           - name: ServiceNow DevOps Unit Test Results
-  #             uses: ServiceNow/servicenow-devops-test-report@dev
-  #             with:
-  #                 devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-  #                 devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-  #                 instance-url: ${{ secrets.SN_INSTANCE_NAME }}
-  #                 tool-id: ${{ secrets.SN_ORCH_TOOL_ID }}
-  #                 # Job Name
-  #                 job-name: 'Test' # Should be same name as declared in 'name' clause of the current Stage
-  #                 # Github Context
-  #                 context-github: ${{ toJSON(github) }}
-  #                 # xml report file name with path
-  #                 xml-report-filename: valid-xunit.xml #testng.xml #valid-xunit.xml #invalid_test_type.xml #valid-nunit.xml #testng.xml #valid-MSTest.trx #testResultsFolder/pytest.xml #valid-nunit.xml #invalid_test_type.xml #valid-nunit.xml #invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
+            - name: ServiceNow DevOps Unit Test Results
+              uses: ServiceNow/servicenow-devops-test-report@main
+              with:
+                  devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+                  devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+                  instance-url: ${{ secrets.SN_INSTANCE_NAME }}
+                  tool-id: ${{ secrets.SN_ORCH_TOOL_ID }}
+                  # Job Name
+                  job-name: 'Test' # Should be same name as declared in 'name' clause of the current Stage
+                  # Github Context
+                  context-github: ${{ toJSON(github) }}
+                  # xml report file name with path
+                  xml-report-filename: valid-xunit.xml #testng.xml #valid-xunit.xml #invalid_test_type.xml #valid-nunit.xml #testng.xml #valid-MSTest.trx #testResultsFolder/pytest.xml #valid-nunit.xml #invalid_test_type.xml #valid-nunit.xml #invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
             
 
                   
