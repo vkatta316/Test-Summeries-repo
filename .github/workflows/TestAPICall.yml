@@ -14,7 +14,7 @@ jobs:
     - name: post_api_call
       run: |
         apiUrl="https://monavr3.service-now.com/api/sn_devops/v1/devops/tool/test?toolId=e7906d3aeb2cd610fc32f6dacad0cd49&testType=Smoke"
-        requestBody='{"toolId": "e7906d3aeb2cd610fc32f6dacad0cd49", "buildNumber": '${{ github.run_number }}' , "workflow": "Test API Call", "repository": "kiranlakhani20/TestTypes-Repo", "stageName":"post_api_call","pipelineName":"TestAPICall", "testType": "Smoke", "buildNumber": '${{ github.run_number }}', "buildId": '${{ github.run_id }}' , "attemptNumber" : '${{ github.run_attempt }}', "testSummaries": [{"name": "GitHub Test Summary - smoke","passedTests": 1,"failedTests": 1,"skippedTests": 1,"ignoredTests": 0,"blockedTests": 1,"totalTests": 4,"startTime": "2023-12-14T23:31:31z","endTime": "2023-12-14T23:31:31z","duration": 0.0,"testType": "Smoke", "suites": []}] }'
+        requestBody='{"toolId": "e7906d3aeb2cd610fc32f6dacad0cd49", "buildNumber": '${{ github.run_number }}' , "workflow": "Test API Call", "repository": "awasthi1210/Test-Summeries-repo", "stageName":"post_api_call","pipelineName":"TestAPICall", "testType": "Smoke", "buildNumber": '${{ github.run_number }}', "buildId": '${{ github.run_id }}' , "attemptNumber" : '${{ github.run_attempt }}', "testSummaries": [{"name": "GitHub Test Summary - smoke","passedTests": 1,"failedTests": 1,"skippedTests": 1,"ignoredTests": 0,"blockedTests": 1,"totalTests": 4,"startTime": "2023-12-14T23:31:31z","endTime": "2023-12-14T23:31:31z","duration": 0.0,"testType": "Smoke", "suites": []}] }'
         auth="ZGV2b3BzLmludGVncmF0aW9uLnVzZXI6VGVzdGluZzEh"
         
         authHeader="Basic $auth"
