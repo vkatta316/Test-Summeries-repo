@@ -104,7 +104,8 @@ jobs:
                   # Github Context
                   context-github: ${{ toJSON(github) }}
                   # xml report file name with path
-                  xml-report-filename: valid-xunit.xml #testng.xml #valid-xunit.xml #invalid_test_type.xml #valid-nunit.xml #testng.xml #valid-MSTest.trx #testResultsFolder/pytest.xml #valid-nunit.xml #invalid_test_type.xml #valid-nunit.xml #invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
+                  xml-report-filename: valid-nunit.xml
+                  #testng.xml #valid-xunit.xml #invalid_test_type.xml #valid-nunit.xml #testng.xml #valid-MSTest.trx #testResultsFolder/pytest.xml #valid-nunit.xml #invalid_test_type.xml #valid-nunit.xml #invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
             
 
                   
