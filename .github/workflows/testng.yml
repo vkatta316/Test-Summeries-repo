@@ -95,7 +95,7 @@ jobs:
                   # devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
                   # devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
                   devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
-                  test-summary-name: 'Mona Test Summary for nunit'
+                  test-summary-name: 'Test Summary for nunit'
                   instance-url: ${{ secrets.SN_INSTANCE_URL }}
                   tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
                   
