@@ -23,7 +23,7 @@ jobs:
             - name: ServiceNow DevOps Unit Test Results
               uses: ServiceNow/servicenow-devops-test-report@v6.0.0
               with:
-                  # Devops Integration Token
+                  # Devops Integration Token test
                   devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
                   #devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
                   #devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
@@ -31,11 +31,11 @@ jobs:
                   tool-id: ${{ secrets.SN_ORCH_TOOL_ID }}
                   # Job Name
                   job-name: 'Test' # Should be same name as declared in 'name' clause of the current Stage
-                  test-summary-name: 'Vinay Test Summary'
+                  test-summary-name: 'Katta Test Summary'
                   # Github Context
                   context-github: ${{ toJSON(github) }}
                   # xml report file name with path
-                  xml-report-filename: valid-xunit.xml #testng.xml #valid-xunit.xml #invalid_test_type.xml #valid-nunit.xml #testng.xml #valid-MSTest.trx #testResultsFolder/pytest.xml #valid-nunit.xml #invalid_test_type.xml #valid-nunit.xml #invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
+                  xml-report-filename: valid-nunit.xml #valid-xunit.xml #testng.xml #valid-xunit.xml #invalid_test_type.xml #testng.xml #valid-MSTest.trx #testResultsFolder/pytest.xml #valid-nunit.xml #invalid_test_type.xml #valid-nunit.xml #invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
             
 
                   
