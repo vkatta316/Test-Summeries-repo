@@ -31,7 +31,7 @@ jobs:
                   tool-id: ${{ secrets.SN_ORCH_TOOL_ID }}
                   # Job Name
                   job-name: 'Test' # Should be same name as declared in 'name' clause of the current Stage
-                  test-summary-name: 'Vinay Test Summary'
+                  test-summary-name: 'Vinay Katta Test Summary'
                   # Github Context
                   context-github: ${{ toJSON(github) }}
                   # xml report file name with path
